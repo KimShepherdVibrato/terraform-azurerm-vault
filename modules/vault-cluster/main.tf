@@ -16,12 +16,12 @@ resource "azurerm_storage_container" "vault" {
 # CREATE A LOAD BALANCER
 #---------------------------------------------------------------------------------------------------------------------
 resource "azurerm_public_ip" "vault_access" {
-  count                        = "${var.associate_public_ip_address_load_balancer ? 1 : 0}"
-  name                         = "${var.cluster_name}_access"
-  location                     = "${var.location}"
-  resource_group_name          = "${var.resource_group_name}"
-  public_ip_address_allocation = "static"
-  domain_name_label            = "${var.cluster_name}"
+  count               = "${var.associate_public_ip_address_load_balancer ? 1 : 0}"
+  name                = "${var.cluster_name}_access"
+  location            = "${var.location}"
+  resource_group_name = "${var.resource_group_name}"
+  allocation_method   = "Static"
+  domain_name_label   = "${var.cluster_name}"
 }
 
 resource "azurerm_lb" "vault_access" {
