@@ -178,11 +178,12 @@ resource "azurerm_virtual_machine_scale_set" "vault_with_load_balancer" {
     primary = true
 
     ip_configuration {
-      name                                   = "VaultIPConfiguration"
-      subnet_id                              = "${var.subnet_id}"
+      name      = "VaultIPConfiguration"
+      subnet_id = "${var.subnet_id}"
+      primary   = true
+
       load_balancer_backend_address_pool_ids = ["${azurerm_lb_backend_address_pool.vault_bepool.id}"]
       load_balancer_inbound_nat_rules_ids    = ["${element(azurerm_lb_nat_pool.vault_lbnatpool.*.id, count.index)}"]
-      primary                                = true
     }
   }
 
