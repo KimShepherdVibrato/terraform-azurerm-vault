@@ -50,27 +50,27 @@ variable "custom_data" {
 
 variable "instance_tier" {
   description = "Specifies the tier of virtual machines in a scale set. Possible values, standard or basic."
-  default = "standard"
+  default     = "standard"
 }
 
 variable "consul_computer_name_prefix" {
   description = "The string that the name of each instance in the cluster will be prefixed with"
-  default = "consul"
+  default     = "consul"
 }
 
 variable "vault_computer_name_prefix" {
   description = "The string that the name of each instance in the cluster will be prefixed with"
-  default = "vault"
+  default     = "vault"
 }
 
 variable "consul_admin_user_name" {
   description = "The name of the administrator user for each instance in the cluster"
-  default = "consuladmin"
+  default     = "consuladmin"
 }
 
 variable "vault_admin_user_name" {
   description = "The name of the administrator user for each instance in the cluster"
-  default = "vaultadmin"
+  default     = "vaultadmin"
 }
 
 variable "instance_root_volume_size" {
