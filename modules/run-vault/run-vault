@@ -117,6 +117,8 @@ function generate_vault_config {
 
   log_info "Creating default Vault config file in $config_path"
   cat > "$config_path" <<EOF
+ui = true
+
 storage "azure" {
   accountName = "$azure_account_name"
   accountKey  = "$azure_account_key"
